@@ -32,7 +32,14 @@ export class CardHeader extends Component {
         >
           {fName + ' ' + lName}
         </a>
-        <p style={{ marginLeft: '5px', marginTop: '2.5vh' }}>
+        <p
+          style={{
+            marginLeft: '5px',
+            marginTop: '2.5vh',
+            color: '#777',
+            fontSize: '15px'
+          }}
+        >
           {months[time.getMonth()] +
             ' ' +
             time.getDate() +

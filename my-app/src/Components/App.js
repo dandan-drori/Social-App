@@ -20,11 +20,9 @@ export class App extends Component {
     const newPost = {
       id: currentId,
       title,
-      counters: {
-        likesCount: 0,
-        commentsCount: 0,
-        sharesCount: 0
-      }
+      likesCount: 0,
+      commentsCount: 0,
+      sharesCount: 0
     };
     this.setState({
       posts: [...this.state.posts, newPost]
@@ -32,23 +30,11 @@ export class App extends Component {
   };
 
   handleIncrement = id => {
-    this.state.posts[id - 1].counters.likesCount = 2;
-    this.forceUpdate();
-
-    //     this.setState({
-    //       posts: [
-    //         {
-    //           id,
-    //           title,
-    //           counters: {
-    //             likesCount: this.state.posts.counters.likesCount + 1,
-    //             commentsCount,
-    //             sharesCount
-    //           }
-    //         }
-    //       ]
-    //     });
-    //   }
+    if (this.state.posts[id - 1].id === id) {
+      this.state.posts[id - 1].likesCount =
+        this.state.posts[id - 1].likesCount + 1;
+    }
+    this.setState({ likesCount: this.state.likesCount + 1 });
   };
 
   render() {

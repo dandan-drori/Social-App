@@ -15,7 +15,7 @@ export class Drawer extends Component {
 
 const drawerStyle = {
   width: '20vw',
-  height: '90vh',
+  minHeight: '90vh',
   paddingLeft: '3vw',
   paddingTop: '3vh',
   background: '#E9EBEE'

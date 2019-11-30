@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 
 export class CardInterActive extends Component {
-  handleClick = id => {
-    this.props.handleincrement(1);
-    // this.props.post[id - 1].id
+  handleClick = () => {
+    this.props.handleincrement(this.props.post.id);
   };
 
   render() {
@@ -20,15 +19,15 @@ export class CardInterActive extends Component {
         }}
       >
         <button onClick={this.handleClick} style={buttonStyle}>
-          <i class='far fa-thumbs-up'></i> Like ({likesCount})
+          <i className='far fa-thumbs-up'></i> Like ({likesCount})
         </button>
         <button style={buttonStyle}>
           {' '}
-          <i class='far fa-comment'></i> Comment ({commentsCount})
+          <i className='far fa-comment'></i> Comment ({commentsCount})
         </button>
         <button style={buttonStyle}>
           {' '}
-          <i class='far fa-share-square'></i> Share ({sharesCount})
+          <i className='far fa-share-square'></i> Share ({sharesCount})
         </button>
       </div>
     );
@@ -40,7 +39,8 @@ const buttonStyle = {
   margin: '1vh',
   borderRadius: '5px',
   border: 'none',
-  cursor: 'pointer'
+  cursor: 'pointer',
+  padding: '5px'
 };
 
 export default CardInterActive;

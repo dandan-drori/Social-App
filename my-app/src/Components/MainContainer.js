@@ -20,7 +20,6 @@ export class MainContainer extends Component {
 }
 
 const ContainerStyle = {
-  height: '90vh',
   width: '60vw',
   background: '#E9EBEE'
 };
