@@ -21,12 +21,18 @@ export class CardHeader extends Component {
 
     return (
       <div style={{ display: 'flex' }}>
-        <p style={{ marginLeft: '5px' }}>image</p>
-        {/* <img src='../Images/michael-dam-mEZ3PoFGs_k-unsplash.jpg' alt='' /> */}
-        <a href='#' style={{ marginLeft: '5px', color: 'blue' }}>
+        <img
+          src={require('../Images/adult-beard-boy-casual-220453.jpg')}
+          alt=''
+          style={imgStyle}
+        />
+        <a
+          href='#'
+          style={{ marginLeft: '5px', color: 'blue', marginTop: '2.5vh' }}
+        >
           {fName + ' ' + lName}
         </a>
-        <p style={{ marginLeft: '5px' }}>
+        <p style={{ marginLeft: '5px', marginTop: '2.5vh' }}>
           {months[time.getMonth()] +
             ' ' +
             time.getDate() +
@@ -42,5 +48,12 @@ export class CardHeader extends Component {
     );
   }
 }
+
+const imgStyle = {
+  width: '50px',
+  height: '50px',
+  borderRadius: '50%',
+  marginLeft: '0.5vw'
+};
 
 export default CardHeader;

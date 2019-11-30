@@ -19,7 +19,14 @@ a:hover {
   text-decoration: underline;
 }
 
-img {
-  width: 100px;
-  height: 100px;
+button {
+  background: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:hover {
+  background: #ddd;
 }

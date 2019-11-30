@@ -23,7 +23,9 @@ export class SocialCard extends Component {
 }
 
 const cardStyle = {
-  width: '100%'
+  width: '100%',
+  background: '#fff',
+  paddingTop: '5px'
 };
 
 export default SocialCard;
