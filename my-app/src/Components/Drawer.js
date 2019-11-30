@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  Link
+} from 'C:/Users/dandan/Desktop/Web/React/social-app/Social-App/node_modules/react-router-dom';
 
 export class Drawer extends Component {
   render() {
     return (
       <div style={drawerStyle}>
-        <p>simple side nav bar</p>
-        <a href='#'>My Profile</a>
-        <a href='#'>News Feed</a>
-        <a href='#'>About</a>
+        <Link to='/myprofile'>My Profile</Link>
+        <Link to='/'>News Feed</Link>
+        <Link to='/about'>About</Link>
       </div>
     );
   }

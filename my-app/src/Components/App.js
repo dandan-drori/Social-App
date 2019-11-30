@@ -4,6 +4,12 @@ import MainContainer from './MainContainer';
 import Drawer from './Drawer';
 import '../App.css';
 import FriendsList from './FriendsList';
+import {
+  BrowserRouter,
+  Switch,
+  Route
+} from 'C:/Users/dandan/Desktop/Web/React/social-app/Social-App/node_modules/react-router-dom';
+import MyProfile from './MyProfile';
 
 export class App extends Component {
   state = {
@@ -39,7 +45,45 @@ export class App extends Component {
 
   render() {
     return (
-      <div>
+      <BrowserRouter>
+        <Switch>
+          <Route path='/myprofile'>
+            <div>
+              <Header />
+              <main style={{ display: 'flex' }}>
+                <Drawer />
+                <MyProfile />
+                <FriendsList />
+              </main>
+            </div>
+          </Route>
+          <Route exact path='/'>
+            <div>
+              <Header />
+              <main style={{ display: 'flex' }}>
+                <Drawer />
+                <MainContainer
+                  user={this.state.user}
+                  time={this.state.time}
+                  title={this.state.title}
+                  onPost={this.onPost}
+                  posts={this.state.posts}
+                  handleincrement={this.handleIncrement}
+                />
+                <FriendsList />
+              </main>
+            </div>
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    );
+  }
+}
+
+export default App;
+
+{
+  /* <div>
         <Header />
         <main style={{ display: 'flex' }}>
           <Drawer />
@@ -53,9 +97,5 @@ export class App extends Component {
           />
           <FriendsList />
         </main>
-      </div>
-    );
-  }
+      </div> */
 }
-
-export default App;
