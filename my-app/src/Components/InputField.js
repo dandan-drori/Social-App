@@ -56,7 +56,9 @@ const inputStyle = {
 const submitStyle = {
   height: '10vh',
   width: '10%',
-  minWidth: '50px'
+  minWidth: '50px',
+  position: 'relative',
+  top: '-1px'
 };
 
 export default InputField;

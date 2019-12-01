@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'C:/Users/dandan/Desktop/Web/React/social-app/Social-App/node_modules/react-router-dom';
+import Button from '@material-ui/core/Button';
 
 export class Drawer extends Component {
   linkStyleChange = () => {
@@ -25,8 +26,13 @@ export class Drawer extends Component {
   render() {
     return (
       <div style={drawerStyle}>
-        <Link to='/myprofile' style={linkStyle}>
-          <i class='far fa-user'></i> My Profile{' '}
+        <Link
+          to='/myprofile'
+          style={linkStyle}
+          onClick={this.rippleEffect}
+          data-animation='ripple'
+        >
+          <i className='far fa-user'></i> My Profile{' '}
           <span className='tooltip'>My Profile</span>
         </Link>
         <Link
@@ -75,5 +81,7 @@ let linkStyle = {
   padding: '5px',
   borderRadius: '3px'
 };
+
+const links = document.querySelectorAll('[data-animation="ripple"]');
 
 export default Drawer;
