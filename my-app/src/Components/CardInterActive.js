@@ -37,6 +37,7 @@ export class CardInterActive extends Component {
 const buttonStyle = {
   width: '30%',
   margin: '1vh',
+  marginLeft: '15px',
   borderRadius: '5px',
   border: 'none',
   cursor: 'pointer',

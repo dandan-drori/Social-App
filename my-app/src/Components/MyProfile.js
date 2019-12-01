@@ -6,11 +6,15 @@ import ProfileMain from './ProfileMain';
 export class MyProfile extends Component {
   render() {
     return (
-      <div>
-        <ProfileMain />
+      <div style={profileStyle}>
+        <ProfileMain user={this.props.user} posts={this.props.posts} />
       </div>
     );
   }
 }
+
+const profileStyle = {
+  width: '60vw'
+};
 
 export default MyProfile;

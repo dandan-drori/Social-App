@@ -16,7 +16,40 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  background: #fff;
+}
+
+a:focus {
+  background: #fff;
+}
+
+.tooltip {
+  visibility: hidden;
+  width: 100px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  margin-left: -50px;
+  margin-top: 30px;
+}
+
+a:hover .tooltip {
+  visibility: visible;
+}
+
+.tooltip::after {
+  content: ' ';
+  position: absolute;
+  bottom: 100%; /* At the top of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
 }
 
 button {

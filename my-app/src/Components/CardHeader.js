@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'C:/Users/dandan/Desktop/Web/React/social-app/Social-App/node_modules/react-router-dom';
 
 export class CardHeader extends Component {
   render() {
@@ -27,7 +28,7 @@ export class CardHeader extends Component {
           style={imgStyle}
         />
         <a
-          href='#'
+          href='/myprofile'
           style={{ marginLeft: '5px', color: 'blue', marginTop: '2.5vh' }}
         >
           {fName + ' ' + lName}

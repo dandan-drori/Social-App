@@ -13,7 +13,8 @@ export class Header extends Component {
 const headerStyle = {
   background: '#6fc5ff',
   textAlign: 'center',
-  height: '10vh'
+  height: '10vh',
+  paddingTop: '10px'
 };
 
 export default Header;

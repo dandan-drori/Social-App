@@ -10,6 +10,7 @@ import {
   Route
 } from 'C:/Users/dandan/Desktop/Web/React/social-app/Social-App/node_modules/react-router-dom';
 import MyProfile from './MyProfile';
+import About from './About.js';
 
 export class App extends Component {
   state = {
@@ -52,7 +53,7 @@ export class App extends Component {
               <Header />
               <main style={{ display: 'flex' }}>
                 <Drawer />
-                <MyProfile />
+                <MyProfile user={this.state.user} posts={this.state.posts} />
                 <FriendsList />
               </main>
             </div>
@@ -70,6 +71,16 @@ export class App extends Component {
                   posts={this.state.posts}
                   handleincrement={this.handleIncrement}
                 />
+                <FriendsList />
+              </main>
+            </div>
+          </Route>
+          <Route path='/about'>
+            <div>
+              <Header />
+              <main style={{ display: 'flex' }}>
+                <Drawer />
+                <About />
                 <FriendsList />
               </main>
             </div>

@@ -24,9 +24,8 @@ export class InputField extends Component {
           <input
             type='text'
             name='title'
-            title='status'
+            title='post'
             placeholder='Enter post content here:'
-            autoFocus
             value={this.state.title}
             onChange={this.onChange}
             style={inputStyle}
@@ -50,7 +49,8 @@ const inputFieldStyle = {
 
 const inputStyle = {
   height: '10vh',
-  width: '75%'
+  width: '75%',
+  fontSize: '15px'
 };
 
 const submitStyle = {
