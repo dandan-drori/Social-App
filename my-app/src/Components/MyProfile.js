@@ -14,7 +14,7 @@ export class MyProfile extends Component {
 }
 
 const profileStyle = {
-  width: '60vw'
+  width: '65vw'
 };
 
 export default MyProfile;

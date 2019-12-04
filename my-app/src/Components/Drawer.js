@@ -3,37 +3,11 @@ import { Link } from 'C:/Users/dandan/Desktop/Web/React/social-app/Social-App/no
 import Button from '@material-ui/core/Button';
 
 export class Drawer extends Component {
-  linkStyleChange = () => {
-    linkStyle = {
-      marginTop: '15px',
-      width: '15vw',
-      padding: '5px',
-      borderRadius: '3px',
-      background: 'red'
-    };
-  };
-
-  linkStyleReturn = () => {
-    linkStyle = {
-      marginTop: '15px',
-      width: '15vw',
-      padding: '5px',
-      borderRadius: '3px',
-      background: 'none'
-    };
-  };
-
   render() {
     return (
       <div style={drawerStyle}>
-        <Link
-          to='/myprofile'
-          style={linkStyle}
-          onClick={this.rippleEffect}
-          data-animation='ripple'
-        >
+        <Link to='/myprofile' style={linkStyle} title='My Profile'>
           <i className='far fa-user'></i> My Profile{' '}
-          <span className='tooltip'>My Profile</span>
         </Link>
         <Link
           to='/'
@@ -43,9 +17,9 @@ export class Drawer extends Component {
             padding: '5px',
             borderRadius: '3px'
           }}
+          title='Live Chat'
         >
           <i className='far fa-comments'></i> Live Chat{' '}
-          <span className='tooltip'>Live Chat</span>
         </Link>
         <Link
           to='/about'
@@ -55,9 +29,9 @@ export class Drawer extends Component {
             padding: '5px',
             borderRadius: '3px'
           }}
+          title='About'
         >
           <i className='fas fa-info'></i> About{' '}
-          <span className='tooltip'>About</span>
         </Link>
       </div>
     );
@@ -75,13 +49,11 @@ const drawerStyle = {
   justifyContent: 'flex-start'
 };
 
-let linkStyle = {
+const linkStyle = {
   marginTop: '15px',
   width: '15vw',
   padding: '5px',
   borderRadius: '3px'
 };
-
-const links = document.querySelectorAll('[data-animation="ripple"]');
 
 export default Drawer;

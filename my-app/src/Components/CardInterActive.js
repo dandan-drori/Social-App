@@ -18,14 +18,18 @@ export class CardInterActive extends Component {
           margin: '2vh'
         }}
       >
-        <button onClick={this.handleClick} style={buttonStyle}>
+        <button
+          onClick={this.handleClick}
+          style={buttonStyle}
+          className='postButton'
+        >
           <i className='far fa-thumbs-up'></i> Like ({likesCount})
         </button>
-        <button style={buttonStyle}>
+        <button style={buttonStyle} className='postButton'>
           {' '}
           <i className='far fa-comment'></i> Comment ({commentsCount})
         </button>
-        <button style={buttonStyle}>
+        <button style={buttonStyle} className='postButton'>
           {' '}
           <i className='far fa-share-square'></i> Share ({sharesCount})
         </button>
@@ -34,14 +38,15 @@ export class CardInterActive extends Component {
   }
 }
 
-const buttonStyle = {
-  width: '30%',
+let buttonStyle = {
+  width: '29.5%',
   margin: '1vh',
   marginLeft: '15px',
   borderRadius: '5px',
   border: 'none',
   cursor: 'pointer',
-  padding: '5px'
+  padding: '5px',
+  background: 'none'
 };
 
 export default CardInterActive;

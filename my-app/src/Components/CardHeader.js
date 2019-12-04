@@ -30,6 +30,7 @@ export class CardHeader extends Component {
         <a
           href='/myprofile'
           style={{ marginLeft: '5px', color: 'blue', marginTop: '2.5vh' }}
+          className='underline'
         >
           {fName + ' ' + lName}
         </a>

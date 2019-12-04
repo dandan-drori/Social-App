@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
-
+import Friends from './Friends';
 export class FriendsList extends Component {
   render() {
     return (
       <div style={friendsListStyle}>
-        <p>list of friends here:</p>
+        <Friends />
       </div>
     );
   }
 }
 
 const friendsListStyle = {
-  width: '20vw',
-  background: '#E9EBEE'
+  width: '15vw',
+  background: '#E9EBEE',
+  paddingLeft: '',
+  paddingTop: '2vh',
+  borderLeft: '1px solid black'
 };
 
 export default FriendsList;

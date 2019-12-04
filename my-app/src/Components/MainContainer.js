@@ -20,8 +20,9 @@ export class MainContainer extends Component {
 }
 
 const ContainerStyle = {
-  width: '60vw',
-  background: '#E9EBEE'
+  width: '65vw',
+  background: '#E9EBEE',
+  paddingRight: '3vw'
 };
 
 export default MainContainer;

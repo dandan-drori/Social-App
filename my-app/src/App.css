@@ -13,14 +13,17 @@ a {
   display: block;
   text-decoration: none;
   color: #1d2129;
+  border: 1px solid #e9ebee;
 }
 
 a:hover {
   background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 a:focus {
   background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .tooltip {
@@ -32,22 +35,40 @@ a:focus {
   border-radius: 6px;
   position: absolute;
   z-index: 1;
-  margin-left: -50px;
-  margin-top: 30px;
+  margin-left: -165px;
   font-size: smaller;
+  width: 150px;
+  height: 80px;
 }
 
-a:hover .tooltip {
+.friend:hover .tooltip {
   visibility: visible;
 }
 
 .tooltip::after {
   content: ' ';
   position: absolute;
-  bottom: 100%; /* At the top of the tooltip */
-  left: 50%;
-  margin-left: -5px;
+  bottom: 45%; /* At the top of the tooltip */
+  left: 100%;
+  margin-left: 0px;
   border-width: 5px;
   border-style: solid;
-  border-color: transparent transparent black transparent;
+  border-color: transparent transparent transparent black;
+}
+
+button:focus {
+  outline: none;
+}
+
+.underline {
+  border: none;
+}
+
+.underline:hover {
+  text-decoration: underline;
+  border: none;
+}
+
+.friend:hover {
+  background: #fff;
 }
