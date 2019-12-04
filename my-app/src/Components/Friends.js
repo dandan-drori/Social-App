@@ -8,7 +8,7 @@ export class Friends extends Component {
       {
         id: 1,
         name: 'Rotem Spivak',
-        img: '../Images/RotemSpivak.jpg'
+        img: '../Images/Rotem_Spivak.jpg'
       },
       {
         id: 2,

@@ -4,9 +4,11 @@ export class Friend extends Component {
   friends = () => {};
 
   render() {
+    console.log(this.props.friends[0].img);
     return this.props.friends.map(friend => {
       return (
         <li
+          key={friend.id}
           className='friend'
           style={{
             display: 'flex',
@@ -18,16 +20,21 @@ export class Friend extends Component {
             fontSize: '13px'
           }}
         >
+          <img
+            src={require('../Images/Rotem_Spivak.jpg')}
+            alt=''
+            style={{ width: '30px', height: '30px' }}
+          />
           {friend.name}{' '}
           <i
-            class='fas fa-circle fa-xs'
+            className='fas fa-circle fa-xs'
             style={{ color: '#42B72A', fontSize: '7px', marginRight: '15px' }}
           ></i>
           <span className='tooltip'>
             <img
-              src={friend.img}
+              src={require(friend.img)}
               alt=''
-              style={{ width: '50px', height: '30px' }}
+              style={{ width: '30px', height: '30px' }}
             />
           </span>
         </li>
