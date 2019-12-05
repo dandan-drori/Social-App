@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 export class Friend extends Component {
   friends = () => {};
 
@@ -21,9 +20,9 @@ export class Friend extends Component {
           }}
         >
           <img
-            src={require('../Images/Rotem_Spivak.jpg')}
+            src={friend.img}
             alt=''
-            style={{ width: '30px', height: '30px' }}
+            style={{ width: '30px', height: '30px', borderRadius: '50%' }}
           />
           {friend.name}{' '}
           <i
@@ -32,10 +31,15 @@ export class Friend extends Component {
           ></i>
           <span className='tooltip'>
             <img
-              src={require(friend.img)}
+              src={friend.img}
               alt=''
-              style={{ width: '30px', height: '30px' }}
+              style={{ width: '30px', height: '30px', textAlign: 'left' }}
             />
+            <p
+              style={{ marginTop: '7px', marginLeft: '5px', fontSize: '13px' }}
+            >
+              {friend.name}
+            </p>
           </span>
         </li>
       );

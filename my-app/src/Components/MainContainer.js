@@ -22,7 +22,7 @@ export class MainContainer extends Component {
 const ContainerStyle = {
   width: '65vw',
   background: '#E9EBEE',
-  paddingRight: '3vw'
+  paddingRight: '2vw'
 };
 
 export default MainContainer;

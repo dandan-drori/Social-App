@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
 import Friend from './Friend';
+import Rotem_Spivak from '../Images/Rotem_Spivak.jpg';
+import Benji_Drori from '../Images/Benji_Drori.jpg';
+import Eden_Eliel from '../Images/Eden_Eliel.jpg';
+import Yotam_tzamir from '../Images/Yotam_Tzamir.jpg';
+import Idan_Arad from '../Images/Idan_Arad.jpg';
+import Shir_Ben_Moshe from '../Images/Shir_Ben_Moshe.jpg';
+import Saar_Danon from '../Images/Saar_Danon.jpg';
 
 export class Friends extends Component {
   state = {
@@ -8,37 +15,37 @@ export class Friends extends Component {
       {
         id: 1,
         name: 'Rotem Spivak',
-        img: '../Images/Rotem_Spivak.jpg'
+        img: Rotem_Spivak
       },
       {
         id: 2,
         name: 'Benji Drori',
-        img: '../Images/Benji_Drori.jpg'
+        img: Benji_Drori
       },
       {
         id: 3,
         name: 'Eden Eliel',
-        img: '../Images/Eden_Eliel.jpg'
+        img: Eden_Eliel
       },
       {
         id: 4,
         name: 'Yotam tzamir',
-        img: '../Images/YotamTzamir.jpg'
+        img: Yotam_tzamir
       },
       {
         id: 5,
         name: 'Shir Ben Moshe',
-        img: '../Images/Shir_Ben_Moshe.jpg'
+        img: Shir_Ben_Moshe
       },
       {
         id: 6,
         name: 'Idan Arad',
-        img: '../Images/Idan_Arad.jpg'
+        img: Idan_Arad
       },
       {
         id: 7,
         name: 'Saar Danon',
-        img: '../Images/Saar_Danon.jpg'
+        img: Saar_Danon
       }
     ]
   };
