@@ -3,7 +3,6 @@ export class Friend extends Component {
   friends = () => {};
 
   render() {
-    console.log(this.props.friends[0].img);
     return this.props.friends.map(friend => {
       return (
         <li

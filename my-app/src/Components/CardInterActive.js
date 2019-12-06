@@ -1,8 +1,23 @@
 import React, { Component } from 'react';
 
 export class CardInterActive extends Component {
-  handleClick = () => {
+  incrementCount = () => {
     this.props.handleincrement(this.props.post.id);
+  };
+
+  // animation: scaleButton 200ms ease-in-out;
+
+  animateButton = e => {
+    if (e.target.style.animation === '') {
+      e.target.style.animation = 'scaleButton 150ms ease-in-out';
+    } else {
+      e.target.style.animation = '';
+    }
+  };
+
+  handleClick = e => {
+    this.incrementCount();
+    this.animateButton(e);
   };
 
   render() {
@@ -39,14 +54,13 @@ export class CardInterActive extends Component {
 }
 
 let buttonStyle = {
-  width: '29.5%',
-  margin: '1vh',
-  marginLeft: '15px',
+  width: '33%',
+  margin: '0.1vw',
+  marginLeft: '1px',
   borderRadius: '5px',
   border: 'none',
   cursor: 'pointer',
-  padding: '5px',
-  background: 'none'
+  padding: '10px 5px'
 };
 
 export default CardInterActive;

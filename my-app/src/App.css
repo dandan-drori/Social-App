@@ -72,3 +72,27 @@ button:focus {
 .friend:hover {
   background: #fff;
 }
+
+.postButton {
+  background: #fff;
+}
+
+.postButton:hover {
+  background: #e9ebee;
+}
+
+.postButton:focus {
+  outline: 1px solid lightblue;
+}
+
+@keyframes scaleButton {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

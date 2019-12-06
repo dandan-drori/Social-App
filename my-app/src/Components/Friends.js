@@ -7,57 +7,60 @@ import Yotam_tzamir from '../Images/Yotam_Tzamir.jpg';
 import Idan_Arad from '../Images/Idan_Arad.jpg';
 import Shir_Ben_Moshe from '../Images/Shir_Ben_Moshe.jpg';
 import Saar_Danon from '../Images/Saar_Danon.jpg';
+import cloneDeep from 'lodash/cloneDeep';
 
 export class Friends extends Component {
-  state = {
-    title: '',
-    friends: [
-      {
-        id: 1,
-        name: 'Rotem Spivak',
-        img: Rotem_Spivak
-      },
-      {
-        id: 2,
-        name: 'Benji Drori',
-        img: Benji_Drori
-      },
-      {
-        id: 3,
-        name: 'Eden Eliel',
-        img: Eden_Eliel
-      },
-      {
-        id: 4,
-        name: 'Yotam tzamir',
-        img: Yotam_tzamir
-      },
-      {
-        id: 5,
-        name: 'Shir Ben Moshe',
-        img: Shir_Ben_Moshe
-      },
-      {
-        id: 6,
-        name: 'Idan Arad',
-        img: Idan_Arad
-      },
-      {
-        id: 7,
-        name: 'Saar Danon',
-        img: Saar_Danon
-      }
-    ]
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: '',
+      friends: [
+        {
+          id: 1,
+          name: 'Rotem Spivak',
+          img: Rotem_Spivak
+        },
+        {
+          id: 2,
+          name: 'Benji Drori',
+          img: Benji_Drori
+        },
+        {
+          id: 3,
+          name: 'Eden Eliel',
+          img: Eden_Eliel
+        },
+        {
+          id: 4,
+          name: 'Yotam tzamir',
+          img: Yotam_tzamir
+        },
+        {
+          id: 5,
+          name: 'Shir Ben Moshe',
+          img: Shir_Ben_Moshe
+        },
+        {
+          id: 6,
+          name: 'Idan Arad',
+          img: Idan_Arad
+        },
+        {
+          id: 7,
+          name: 'Saar Danon',
+          img: Saar_Danon
+        }
+      ]
+    };
+    this.originalEnteries = cloneDeep(this.state.friends);
+  }
 
   onChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
     this.setState({
-      friends: [
-        this.state.friends.filter(friend => {
-          return friend.id === 1;
-        })
-      ]
+      title: e.target.value,
+      friends: this.originalEnteries.filter(friend => {
+        return friend.name.toLowerCase().includes(e.target.value);
+      })
     });
   };
 
