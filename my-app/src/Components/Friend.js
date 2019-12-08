@@ -34,11 +34,19 @@ export class Friend extends Component {
               alt=''
               style={{ width: '30px', height: '30px', textAlign: 'left' }}
             />
-            <p
-              style={{ marginTop: '7px', marginLeft: '5px', fontSize: '13px' }}
+            <a
+              href='#'
+              className='tooltipLink'
+              style={{
+                marginTop: '7px',
+                marginLeft: '5px',
+                fontSize: '13px',
+                border: 'none',
+                color: '#fff'
+              }}
             >
               {friend.name}
-            </p>
+            </a>
           </span>
         </li>
       );

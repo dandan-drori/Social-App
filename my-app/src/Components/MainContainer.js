@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import SocialCard from './SocialCard';
 import InputField from './InputField';
-
 export class MainContainer extends Component {
   render() {
     return (
@@ -13,6 +12,7 @@ export class MainContainer extends Component {
           title={this.props.title}
           posts={this.props.posts}
           handleincrement={this.props.handleincrement}
+          handledecrement={this.props.handledecrement}
         />
       </div>
     );

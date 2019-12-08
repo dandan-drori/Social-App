@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
-
 export class CardInterActive extends Component {
   incrementCount = () => {
     this.props.handleincrement(this.props.post.id);
   };
 
-  // animation: scaleButton 200ms ease-in-out;
+  decrementCount = () => {
+    this.props.handledecrement(this.props.post.id);
+  };
 
   animateButton = e => {
-    if (e.target.style.animation === '') {
-      e.target.style.animation = 'scaleButton 150ms ease-in-out';
-    } else {
-      e.target.style.animation = '';
-    }
+    e.target.classList.toggle('liked');
   };
 
   handleClick = e => {
-    this.incrementCount();
     this.animateButton(e);
+    if (e.target.className === 'postButton liked') {
+      this.incrementCount(e);
+    } else if (e.target.className === 'postButton') {
+      this.decrementCount(e);
+    }
   };
 
   render() {

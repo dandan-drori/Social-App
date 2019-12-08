@@ -39,6 +39,7 @@ a:focus {
   width: 150px;
   height: 80px;
   display: flex;
+  cursor: initial;
 }
 
 .friend:hover .tooltip {
@@ -54,6 +55,15 @@ a:focus {
   border-width: 5px;
   border-style: solid;
   border-color: transparent transparent transparent black;
+}
+
+.tooltipLink:hover {
+  background: none;
+  text-decoration: underline;
+}
+
+.tooltipLink:focus {
+  background: none;
 }
 
 button:focus {
@@ -75,6 +85,7 @@ button:focus {
 
 .postButton {
   background: #fff;
+  animation: dislike 150ms ease-in-out;
 }
 
 .postButton:hover {
@@ -85,7 +96,27 @@ button:focus {
   outline: 1px solid lightblue;
 }
 
-@keyframes scaleButton {
+.liked {
+  animation: like 150ms ease-in-out;
+}
+
+.liked i {
+  color: blue;
+}
+
+@keyframes like {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes dislike {
   0% {
     transform: scale(1);
   }

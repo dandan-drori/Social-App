@@ -36,12 +36,30 @@ export class App extends Component {
     });
   };
 
+  // handleIncrement = id => {
+  //   if (this.state.posts[id - 1].id === id) {
+  //     this.state.posts[id - 1].likesCount =
+  //       this.state.posts[id - 1].likesCount + 1;
+  //   }
+  //   this.setState({ likesCount: this.state.likesCount + 1 });
+  // };
+
   handleIncrement = id => {
     if (this.state.posts[id - 1].id === id) {
       this.state.posts[id - 1].likesCount =
         this.state.posts[id - 1].likesCount + 1;
     }
-    this.setState({ likesCount: this.state.likesCount + 1 });
+    this.setState(state => {
+      return { likesCount: state.likesCount + 1 };
+    });
+  };
+
+  handleDecrement = id => {
+    if (this.state.posts[id - 1].id === id) {
+      this.state.posts[id - 1].likesCount =
+        this.state.posts[id - 1].likesCount - 1;
+    }
+    this.setState({ likesCount: this.state.likesCount - 1 });
   };
 
   render() {
@@ -70,6 +88,7 @@ export class App extends Component {
                   onPost={this.onPost}
                   posts={this.state.posts}
                   handleincrement={this.handleIncrement}
+                  handledecrement={this.handleDecrement}
                 />
                 <FriendsList />
               </main>

@@ -7,7 +7,7 @@ export class InputField extends Component {
   };
 
   onChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
+    this.setState({ title: e.target.value });
   };
 
   onSubmit = e => {

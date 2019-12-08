@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'C:/Users/dandan/Desktop/Web/React/social-app/Social-App/node_modules/react-router-dom';
-import Button from '@material-ui/core/Button';
 
 export class Drawer extends Component {
   render() {

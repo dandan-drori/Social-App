@@ -62,6 +62,7 @@ export class Friends extends Component {
         return friend.name.toLowerCase().includes(e.target.value);
       })
     });
+    console.log(this.state.friends);
   };
 
   render() {
