@@ -127,3 +127,80 @@ button:focus {
     transform: scale(1);
   }
 }
+
+/*  login screen styles  */
+
+.formContainer {
+  background-color: #c7c8cc;
+  display: flex;
+  height: 60vh;
+  width: 30vw;
+  margin-left: 35%;
+  margin-top: 10%;
+  padding-top: 1%;
+  border: 3px solid #fff;
+  border-radius: 5px;
+  text-align: center;
+  justify-content: center;
+}
+
+.formContainer h2 {
+  margin-bottom: 3%;
+}
+
+.formContainer i {
+  margin-bottom: 3%;
+  color: grey;
+}
+
+body {
+  background-image: linear-gradient(to bottom, #e8dadb, #77848e);
+  height: 79vh;
+}
+
+.email,
+.password {
+  background-color: #fff;
+  border-radius: 5px;
+  height: 5vh;
+  width: 17vw;
+  margin-bottom: 3vh;
+  font-size: 15px;
+}
+
+.login,
+.signup {
+  background-color: #00c6ff;
+  border-radius: 5px;
+  border: 0.5px solid #fff;
+  padding: 7px;
+  margin: 7px;
+  cursor: pointer;
+  font-weight: bold;
+  display: block;
+}
+
+.login:hover,
+.signup:hover {
+  background-color: #00a6dd;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.logout {
+  background-color: #00c6ff;
+  border-radius: 5px;
+  border: 0.5px solid #fff;
+  padding: 7px;
+  margin: 7px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #fff;
+}
+
+.logout:hover {
+  background: #00a6dd;
+}

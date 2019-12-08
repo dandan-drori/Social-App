@@ -5,16 +5,25 @@ export class Header extends Component {
     return (
       <div style={headerStyle}>
         <h1>Social App</h1>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <h4 style={{ marginRight: '0.7vw' }}>Hello, User.name!</h4>
+          <button onClick={this.props.logout} className='logout'>
+            Logout
+          </button>
+        </div>
       </div>
     );
   }
 }
 
 const headerStyle = {
-  background: '#6fc5ff',
-  textAlign: 'center',
+  display: 'flex',
+  justifyContent: 'space-between',
+  background: '#00c6ff',
   height: '10vh',
-  paddingTop: '10px'
+  padding: '0.7vw',
+  paddingLeft: '2vw',
+  paddingRight: '2vw'
 };
 
 export default Header;
