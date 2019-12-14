@@ -22,9 +22,7 @@ export class CardInterActive extends Component {
   };
 
   handleComment = e => {
-    // this.incrementComment(e);
     e.target.classList.toggle('addComment');
-    const input = document.getElementById('commentInput');
   };
 
   render() {

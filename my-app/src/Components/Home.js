@@ -12,7 +12,6 @@ import {
 import MyProfile from './MyProfile';
 import About from './About.js';
 import fire from '../config/Fire';
-import produce from 'immer';
 export class Home extends Component {
   constructor(props) {
     super(props);
@@ -48,7 +47,7 @@ export class Home extends Component {
     const newPost = {
       id: currentId,
       title,
-      comments: [{ '': '' }],
+      comments: [],
       likesCount: 0,
       commentsCount: 0,
       sharesCount: 0

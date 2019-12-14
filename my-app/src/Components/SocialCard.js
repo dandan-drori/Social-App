@@ -25,7 +25,7 @@ const cardStyle = {
   width: '100%',
   background: '#fff',
   paddingTop: '5px',
-  borderRadius: '3px',
+  borderRadius: '3px 3px 0 0',
   border: '1px solid rgba(0,0,0,0.2)',
   marginBottom: '10px'
 };
