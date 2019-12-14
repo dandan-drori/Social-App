@@ -6,7 +6,9 @@ export class Header extends Component {
       <div style={headerStyle}>
         <h1>Social App</h1>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <h4 style={{ marginRight: '0.7vw' }}>Hello, User.name!</h4>
+          <h4 style={{ marginRight: '0.7vw' }}>
+            Hello, {this.props.user.fName}
+          </h4>
           <button onClick={this.props.logout} className='logout'>
             Logout
           </button>

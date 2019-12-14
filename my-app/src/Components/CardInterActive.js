@@ -21,6 +21,12 @@ export class CardInterActive extends Component {
     }
   };
 
+  handleComment = e => {
+    // this.incrementComment(e);
+    e.target.classList.toggle('addComment');
+    const input = document.getElementById('commentInput');
+  };
+
   render() {
     const {
       likesCount = 0,
@@ -41,7 +47,11 @@ export class CardInterActive extends Component {
         >
           <i className='far fa-thumbs-up'></i> Like ({likesCount})
         </button>
-        <button style={buttonStyle} className='postButton'>
+        <button
+          style={buttonStyle}
+          className='postButton'
+          onClick={this.handleComment}
+        >
           {' '}
           <i className='far fa-comment'></i> Comment ({commentsCount})
         </button>

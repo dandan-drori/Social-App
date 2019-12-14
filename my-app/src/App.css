@@ -128,6 +128,22 @@ button:focus {
   }
 }
 
+.addComment {
+  animation: addComment 150ms ease-in-out;
+}
+
+@keyframes addComment {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 /*  login screen styles  */
 
 .formContainer {
@@ -136,7 +152,6 @@ button:focus {
   height: 60vh;
   width: 30vw;
   margin-left: 35%;
-  margin-top: 10%;
   padding-top: 1%;
   border: 3px solid #fff;
   border-radius: 5px;
@@ -149,17 +164,20 @@ button:focus {
 }
 
 .formContainer i {
-  margin-bottom: 3%;
+  margin-bottom: 4%;
   color: grey;
 }
 
-body {
+.bodyWrapper {
   background-image: linear-gradient(to bottom, #e8dadb, #77848e);
-  height: 79vh;
+  height: 100vh;
+  padding-top: 7%;
 }
 
 .email,
-.password {
+.password,
+.fName,
+.lName {
   background-color: #fff;
   border-radius: 5px;
   height: 5vh;
@@ -203,4 +221,8 @@ body {
 
 .logout:hover {
   background: #00a6dd;
+}
+
+.commentInput:focus {
+  outline: none;
 }

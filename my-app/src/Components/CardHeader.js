@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'C:/Users/dandan/Desktop/Web/React/social-app/Social-App/node_modules/react-router-dom';
-
 export class CardHeader extends Component {
   render() {
     const { fName, lName } = this.props.user;

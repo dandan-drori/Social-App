@@ -12,7 +12,7 @@ import {
 import MyProfile from './MyProfile';
 import About from './About.js';
 import fire from '../config/Fire';
-
+import produce from 'immer';
 export class Home extends Component {
   constructor(props) {
     super(props);
@@ -31,10 +31,24 @@ export class Home extends Component {
     fire.auth().signOut();
   };
 
+  onComment = (id, commentId, title) => {
+    const newComment = {
+      commentId,
+      title
+    };
+    const { comments } = { ...this.state.posts[id - 1] };
+    const currentComment = comments;
+    currentComment[commentId - 1] = newComment;
+    this.setState({
+      posts: [...this.state.posts]
+    });
+  };
+
   onPost = (currentId, title) => {
     const newPost = {
       id: currentId,
       title,
+      comments: [{ '': '' }],
       likesCount: 0,
       commentsCount: 0,
       sharesCount: 0
@@ -69,7 +83,7 @@ export class Home extends Component {
           <Switch>
             <Route path='/myprofile'>
               <div>
-                <Header logout={this.logout} />
+                <Header logout={this.logout} user={this.state.user} />
                 <main style={{ display: 'flex' }}>
                   <Drawer />
                   <MyProfile user={this.state.user} posts={this.state.posts} />
@@ -79,7 +93,7 @@ export class Home extends Component {
             </Route>
             <Route exact path='/'>
               <div>
-                <Header logout={this.logout} />
+                <Header logout={this.logout} user={this.state.user} />
                 <main style={{ display: 'flex' }}>
                   <Drawer />
                   <MainContainer
@@ -87,6 +101,7 @@ export class Home extends Component {
                     time={this.state.time}
                     title={this.state.title}
                     onPost={this.onPost}
+                    onComment={this.onComment}
                     posts={this.state.posts}
                     handleincrement={this.handleIncrement}
                     handledecrement={this.handleDecrement}
@@ -97,7 +112,7 @@ export class Home extends Component {
             </Route>
             <Route path='/about'>
               <div>
-                <Header logout={this.logout} />
+                <Header logout={this.logout} user={this.state.user} />
                 <main style={{ display: 'flex' }}>
                   <Drawer />
                   <About />

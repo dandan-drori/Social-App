@@ -1,16 +1,5 @@
 import React, { Component } from 'react';
-import Header from './Header';
-import MainContainer from './MainContainer';
-import Drawer from './Drawer';
 import '../App.css';
-import FriendsList from './FriendsList';
-import {
-  BrowserRouter,
-  Switch,
-  Route
-} from 'C:/Users/dandan/Desktop/Web/React/social-app/Social-App/node_modules/react-router-dom';
-import MyProfile from './MyProfile';
-import About from './About.js';
 import fire from '../config/Fire';
 import Login from './Login';
 import Home from './Home';
@@ -20,10 +9,14 @@ export class App extends Component {
     this.state = {
       userLog: {}
     };
+    this.bodyStyle = {};
   }
 
   componentDidMount() {
     this.authListener();
+    this.bodyStyle = {
+      background: '#fff'
+    };
   }
 
   authListener = () => {

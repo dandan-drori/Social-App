@@ -11,6 +11,7 @@ export class MainContainer extends Component {
           time={this.props.time}
           title={this.props.title}
           posts={this.props.posts}
+          onComment={this.props.onComment}
           handleincrement={this.props.handleincrement}
           handledecrement={this.props.handledecrement}
         />

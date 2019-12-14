@@ -35,7 +35,7 @@ export class Friend extends Component {
               style={{ width: '30px', height: '30px', textAlign: 'left' }}
             />
             <a
-              href='#'
+              href='/'
               className='tooltipLink'
               style={{
                 marginTop: '7px',

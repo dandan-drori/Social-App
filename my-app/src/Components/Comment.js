@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-
 export class Comment extends Component {
   state = {
-    comments: [],
     title: '',
-    commentNumber: 1
+    commentId: 1
   };
 
   onChange = e => {
@@ -14,21 +11,13 @@ export class Comment extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    this.onComment(this.state.commentNumber, this.state.title);
+    this.props.onComment(
+      this.props.post.id,
+      this.state.commentId,
+      this.state.title
+    );
     this.setState({ title: '' });
-    this.setState({ commentNumber: this.state.commentNumber + 1 });
-    let comment = React.createElement('p', this.state.title);
-    ReactDOM.render(comment, document.getElementById('comment'));
-  };
-
-  onComment = (commentNumber, title) => {
-    const newComment = {
-      commentNumber,
-      title
-    };
-    this.setState({
-      comments: [...this.state.comments, newComment]
-    });
+    this.setState({ commentId: this.state.commentId + 1 });
   };
 
   render() {
@@ -41,10 +30,12 @@ export class Comment extends Component {
             title='comment'
             value={this.state.title}
             onChange={this.onChange}
+            className='commentInput'
+            id='commentInput'
             style={{ width: '90%', height: '5vh', borderRadius: '15px' }}
           />
         </form>
-        <div id='comment'></div>
+        <div id='comment'>{this.props.post.comments[0].title}</div>
       </div>
     );
   }
@@ -55,7 +46,7 @@ const CommentStyle = {
   position: 'absolute',
   width: '62.9vw',
   marginBottom: '20px',
-  backgroundColor: 'red',
+  backgroundColor: '#00C6FF',
   textAlign: 'center',
   padding: '0.3rem'
 };
