@@ -50,8 +50,11 @@ export class Home extends Component {
       posts: [...this.state.posts]
     });
     if (this.state.posts[id - 1].id === id) {
-      this.state.posts[id - 1].commentsCount =
-        this.state.posts[id - 1].commentsCount + 1;
+      this.setState(state => {
+        state.posts[id - 1].commentsCount =
+          this.state.posts[id - 1].commentsCount + 1;
+        return state;
+      });
     }
     this.setState(state => {
       return { commentsCount: state.likesCount + 1 };
@@ -75,20 +78,20 @@ export class Home extends Component {
 
   handleIncrement = id => {
     if (this.state.posts[id - 1].id === id) {
-      this.state.posts[id - 1].likesCount =
-        this.state.posts[id - 1].likesCount + 1;
+      this.setState(state => {
+        state.posts[id - 1].likesCount = state.posts[id - 1].likesCount + 1;
+        return state;
+      });
     }
-    this.setState(state => {
-      return { likesCount: state.likesCount + 1 };
-    });
   };
 
   handleDecrement = id => {
     if (this.state.posts[id - 1].id === id) {
-      this.state.posts[id - 1].likesCount =
-        this.state.posts[id - 1].likesCount - 1;
+      this.setState(state => {
+        state.posts[id - 1].likesCount = state.posts[id - 1].likesCount - 1;
+        return state;
+      });
     }
-    this.setState({ likesCount: this.state.likesCount - 1 });
   };
 
   render() {

@@ -1,5 +1,7 @@
 // import firebase from 'firebase';
-import { initializeApp } from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/app';
+import 'firebase/auth';
 
 const config = {
   apiKey: 'AIzaSyBoxisdUk-ZAEtVmabzFs0RaWVx2sTVT9w',
@@ -9,6 +11,6 @@ const config = {
   storageBucket: 'social-app-ca70b.appspot.com',
   messagingSenderId: '509352709557'
 };
-// const fire = firebase.initializeApp(config);
-const fire = initializeApp(config);
+
+const fire = firebase.initializeApp(config);
 export default fire;
