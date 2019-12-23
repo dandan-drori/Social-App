@@ -14,6 +14,7 @@ export class MainContainer extends Component {
           onComment={this.props.onComment}
           handleincrement={this.props.handleincrement}
           handledecrement={this.props.handledecrement}
+          onCommentButtonClick={this.props.onCommentButtonClick}
         />
       </div>
     );

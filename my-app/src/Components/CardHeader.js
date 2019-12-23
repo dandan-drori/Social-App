@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 export class CardHeader extends Component {
   render() {
     const { fName, lName } = this.props.user;
@@ -25,13 +26,13 @@ export class CardHeader extends Component {
           alt=''
           style={imgStyle}
         />
-        <a
-          href='/myprofile'
+        <Link
+          to='/myprofile'
           style={{ marginLeft: '5px', color: 'blue', marginTop: '2.5vh' }}
           className='underline'
         >
           {fName + ' ' + lName}
-        </a>
+        </Link>
         <p
           style={{
             marginLeft: '5px',

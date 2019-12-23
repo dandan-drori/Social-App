@@ -23,6 +23,7 @@ export class CardInterActive extends Component {
 
   handleComment = e => {
     e.target.classList.toggle('addComment');
+    this.props.onCommentButtonClick(this.props.post.id);
   };
 
   render() {

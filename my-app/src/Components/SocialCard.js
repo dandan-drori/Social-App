@@ -14,6 +14,7 @@ export class SocialCard extends Component {
           post={post}
           handleincrement={this.props.handleincrement}
           handledecrement={this.props.handledecrement}
+          onCommentButtonClick={this.props.onCommentButtonClick}
         />
         <Comment onComment={this.props.onComment} post={post} />
       </div>

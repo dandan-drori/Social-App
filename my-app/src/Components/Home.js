@@ -30,16 +30,31 @@ export class Home extends Component {
     fire.auth().signOut();
   };
 
+  onCommentButtonClick = id => {
+    this.setState(state => {
+      state.posts[id - 1].isCommentHidden = !state.posts[id - 1]
+        .isCommentHidden;
+      return state;
+    });
+  };
+
   onComment = (id, commentId, title) => {
     const newComment = {
       commentId,
       title
     };
     const { comments } = { ...this.state.posts[id - 1] };
-    const currentComment = comments;
+    let currentComment = comments;
     currentComment[commentId - 1] = newComment;
     this.setState({
       posts: [...this.state.posts]
+    });
+    if (this.state.posts[id - 1].id === id) {
+      this.state.posts[id - 1].commentsCount =
+        this.state.posts[id - 1].commentsCount + 1;
+    }
+    this.setState(state => {
+      return { commentsCount: state.likesCount + 1 };
     });
   };
 
@@ -48,6 +63,7 @@ export class Home extends Component {
       id: currentId,
       title,
       comments: [],
+      isCommentHidden: true,
       likesCount: 0,
       commentsCount: 0,
       sharesCount: 0
@@ -104,6 +120,7 @@ export class Home extends Component {
                     posts={this.state.posts}
                     handleincrement={this.handleIncrement}
                     handledecrement={this.handleDecrement}
+                    onCommentButtonClick={this.onCommentButtonClick}
                   />
                   <FriendsList />
                 </main>
