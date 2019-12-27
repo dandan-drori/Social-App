@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import '../App.css';
 import fire from '../config/Fire';
-import Login from './Login';
 import Home from './Home';
+import Authentication from './Authentication';
 export class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userLog: {}
+      userLog: {},
+      users: []
     };
     this.bodyStyle = {};
   }
@@ -33,7 +34,9 @@ export class App extends Component {
 
   render() {
     return (
-      <div className='App'>{this.state.userLog ? <Home /> : <Login />}</div>
+      <div className='App'>
+        {this.state.userLog ? <Home /> : <Authentication />}
+      </div>
     );
   }
 }

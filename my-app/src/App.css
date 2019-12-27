@@ -226,3 +226,24 @@ button:focus {
 .commentInput:focus {
   outline: none;
 }
+
+.auth {
+  border: none;
+  display: inline;
+  color: blue;
+}
+
+.auth:hover {
+  background: none;
+  border: none;
+  text-decoration: underline;
+}
+
+.signupbuttonlink {
+  border: none;
+}
+
+.signupbuttonlink:hover {
+  border: none;
+  background: none;
+}

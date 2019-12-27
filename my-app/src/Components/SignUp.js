@@ -1,25 +1,17 @@
 import React, { Component } from 'react';
 import fire from '../config/Fire';
 import { Link } from 'C:/Users/dandan/Desktop/Web/React/social-app/Social-App/node_modules/react-router-dom';
-export class Login extends Component {
+
+export class SignUp extends Component {
   constructor(props) {
     super(props);
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      fName: '',
+      lName: ''
     };
   }
-
-  login = e => {
-    e.preventDefault();
-    fire
-      .auth()
-      .signInWithEmailAndPassword(this.state.email, this.state.password)
-      .then(u => {})
-      .catch(error => {
-        alert(error);
-      });
-  };
 
   signup = e => {
     e.preventDefault();
@@ -39,9 +31,9 @@ export class Login extends Component {
   render() {
     return (
       <div className='bodyWrapper'>
-        <div className='formContainer'>
-          <form onSubmit={this.login} className='form'>
-            <h2>Login</h2>
+        <div className='formContainer' style={{ height: '70vh' }}>
+          <form onSubmit={this.signup} className='form'>
+            <h2>Signup</h2>
             <i className='fas fa-user-circle fa-6x'></i>
             <div>
               <input
@@ -65,15 +57,39 @@ export class Login extends Component {
                 className='password'
               />
             </div>
+            <div>
+              <input
+                type='text'
+                name='fName'
+                id='fName'
+                value={this.state.fName}
+                onChange={this.handleChange}
+                placeholder='First Name'
+                className='fName'
+              />
+            </div>
+            <div>
+              <input
+                type='text'
+                name='lName'
+                id='lName'
+                value={this.state.lName}
+                onChange={this.handleChange}
+                placeholder='Last Name'
+                className='lName'
+              />
+            </div>
             <div className='buttons'>
-              <button type='submit' onClick={this.login} className='login'>
-                Login
+              <button onClick={this.signup} className='signup'>
+                <Link to='/' className='signupbuttonlink'>
+                  Sign Up
+                </Link>
               </button>
             </div>
             <p>
-              Don't have an account?{' '}
-              <Link to='/signup' className='auth'>
-                Sign Up
+              Already have an account?{' '}
+              <Link to='/' className='auth'>
+                Login
               </Link>
             </p>
           </form>
@@ -83,4 +99,4 @@ export class Login extends Component {
   }
 }
 
-export default Login;
+export default SignUp;
