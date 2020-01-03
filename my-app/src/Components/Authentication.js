@@ -15,12 +15,18 @@ export class Authentication extends Component {
           <Switch>
             <Route path='/signup'>
               <div>
-                <SignUp />
+                <SignUp
+                  writeUserData={this.props.writeUserData}
+                  getUserData={this.props.getUserData}
+                />
               </div>
             </Route>
             <Route path='/'>
               <div>
-                <Login />
+                <Login
+                  getUserData={this.props.getUserData}
+                  activeUser={this.props.activeUser}
+                />
               </div>
             </Route>
           </Switch>

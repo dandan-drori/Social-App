@@ -101,7 +101,11 @@ export class Home extends Component {
           <Switch>
             <Route path='/myprofile'>
               <div>
-                <Header logout={this.logout} user={this.state.user} />
+                <Header
+                  logout={this.logout}
+                  user={this.state.user}
+                  activeUser={this.props.activeUser}
+                />
                 <main style={{ display: 'flex' }}>
                   <Drawer />
                   <MyProfile user={this.state.user} posts={this.state.posts} />
@@ -111,7 +115,11 @@ export class Home extends Component {
             </Route>
             <Route exact path='/'>
               <div>
-                <Header logout={this.logout} user={this.state.user} />
+                <Header
+                  logout={this.logout}
+                  user={this.state.user}
+                  activeUser={this.props.activeUser}
+                />
                 <main style={{ display: 'flex' }}>
                   <Drawer />
                   <MainContainer
@@ -131,7 +139,11 @@ export class Home extends Component {
             </Route>
             <Route path='/about'>
               <div>
-                <Header logout={this.logout} user={this.state.user} />
+                <Header
+                  logout={this.logout}
+                  user={this.state.user}
+                  activeUser={this.props.activeUser}
+                />
                 <main style={{ display: 'flex' }}>
                   <Drawer />
                   <About />

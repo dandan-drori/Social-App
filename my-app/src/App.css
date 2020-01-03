@@ -239,11 +239,20 @@ button:focus {
   text-decoration: underline;
 }
 
+.auth:focus {
+  background: none;
+  border: none;
+}
+
 .signupbuttonlink {
   border: none;
 }
 
 .signupbuttonlink:hover {
   border: none;
+  background: none;
+}
+
+.signupbuttonlink:focus {
   background: none;
 }

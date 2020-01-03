@@ -6,8 +6,17 @@ export class Login extends Component {
     super(props);
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      activeUser: ''
     };
+    this.props
+      .getUserData()
+      .then(obj => {
+        return obj[0];
+      })
+      .then(obj => {
+        this.setState({ activeUser: obj });
+      });
   }
 
   login = e => {
@@ -19,17 +28,9 @@ export class Login extends Component {
       .catch(error => {
         alert(error);
       });
-  };
-
-  signup = e => {
-    e.preventDefault();
-    fire
-      .auth()
-      .createUserWithEmailAndPassword(this.state.email, this.state.password)
-      .then(u => {})
-      .catch(error => {
-        alert(error);
-      });
+    if (this.state.email === this.state.activeUser.email) {
+      this.props.activeUser(this.state.activeUser);
+    }
   };
 
   handleChange = e => {

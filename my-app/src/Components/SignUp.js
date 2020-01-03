@@ -9,7 +9,10 @@ export class SignUp extends Component {
       email: '',
       password: '',
       fName: '',
-      lName: ''
+      lName: '',
+      userIdCounter: this.props.getUserData().then(userObj => {
+        return userObj.length;
+      })
     };
   }
 
@@ -22,6 +25,16 @@ export class SignUp extends Component {
       .catch(error => {
         alert(error);
       });
+    this.props.writeUserData(
+      // this.state.userIdCounter.then(obj => {
+      //   return obj;
+      // }),
+      1,
+      this.state.fName,
+      this.state.lName,
+      this.state.email,
+      this.state.password
+    );
   };
 
   handleChange = e => {
@@ -29,6 +42,7 @@ export class SignUp extends Component {
   };
 
   render() {
+    // console.log(this.state.userIdCounter.then(obj => console.log(obj)));
     return (
       <div className='bodyWrapper'>
         <div className='formContainer' style={{ height: '70vh' }}>
